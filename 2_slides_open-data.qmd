@@ -1,0 +1,103 @@
+---
+title: "Promoting Open Science<br />in Learning Research"
+subtitle: "Collaborative Exploration of Future Directions"
+title-slide-attributes:
+  data-background-image: www/title-bg.jpg
+  data-background-size: cover
+  #data-background-opacity: "0.3"
+author: "<br /><br /><b>Jürgen Schneider</b><br />*Caspar J. Van Lissa, Marjan Bakker and Olmo van den Akker<br /><br />EARLI SIG 4/17*"
+date: today # "20. Mar 2024"
+date-format: "DD MMMM YYYY"
+format: 
+  revealjs:
+      theme: [white] # sky default
+      logo: www/dipf-logo.png
+      footer: "Slides: [link pending](#)"
+      smaller: true
+      scrollable: true
+      transition: fade
+      width: 1500
+      height: 850
+      hide-inactive-cursor: false
+      embed-resources: true
+editor: source
+editor_options: 
+  chunk_output_type: console
+bibliography: www/references.bib
+css: www/style.css
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message=FALSE, 
+                      warning=FALSE)
+### DOWNLOAD NEWEST SOURCES
+## befindet sich im DIPF Ordner
+# download.file("https://drive.google.com/uc?export=download&id=1ASV99YHMHSNChSNzqbZwvz2SiqYvmqO_",
+#               "www/references.bib", overwrite = T)
+
+
+library(fontawesome)
+```
+
+
+## Overview of the session
+
+\
+
+1. **Introduction to 3 open science aspects (10min each)**
+   - Preregistration & Registered Reports
+   - Open and FAIR data
+   - Open and Reproducible Code<br /><br />
+2. **Subgroup Discussions (60min)**
+   - One group for each OS aspect
+   - Applying a model for managing complex change"
+   - For each OS aspect: Where do you see the greatest need for change?
+   - What specific actions can we take or initiate?<br /><br />
+3. **Bringing Ideas Together, Plenary Discussion (30min)**
+
+
+## What is open and FAIR data
+
+* Description and Definition: Explain what the open science practice is, including its key concepts and terminology.
+
+## Potential impact and benefits
+
+* Potential for Advancing Research: Discuss how this practice can enhance research in learning and instruction. If there is evidence from empirical studies, here would be a good spot to put it.
+* Broader Implications: Explore how the practice might influence the research community.
+
+## Examples of best practices
+
+* Successful Implementations: Provide examples of how this practice has been effectively applied in other research settings or fields.
+* Highlight best practices, and any tools or resources that have facilitated successful adoption.
+
+
+## Introduction of Subgroup Discussions
+
+* Short introduction to Model for Managing Complex Change (Lippitt-Knoster)
+* Explanation of how we document the outcomes of subgroup discussions
+
+
+
+
+# Thank you
+
+![](www/dipf-logo.png){width="20%"}\
+\
+
+**Jürgen Schneider**\
+[ju.schneider\@dipf.de](mailto:ju.schneider@dipf.de){.email}
+
+## References
+
+::: {#refs}
+:::
+
+## Credit
+
+Title page: [OpenClipart-Vectors](https://pixabay.com/users/openclipart-vectors-30363/) on [www.pixabay.com](https://pixabay.com)  
+  
+Icons by Font Awesome CC BY 4.0
+
+
