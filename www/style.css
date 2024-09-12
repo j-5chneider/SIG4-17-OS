@@ -34,6 +34,10 @@ strong {
   font-size: 1.6em;
 }
 
+.smaller09 {
+  font-size: 0.9em;
+}
+
 .highlight {
   background-color: #f9a541; /*#F29400*/
   color: #f9f9f9;
@@ -238,6 +242,34 @@ a:active {
   margin: 2%;
 }
 
+.box-orange-light {
+  background: #ffdab3; 
+/*  width: max-content !important;*/
+  border-radius: 10px;
+  padding: 5px;
+/*  font-size: 1.2em;*/
+  margin: 15px;
+}
+
+.box-grey-light {
+  background: #ededed; 
+/*  width: max-content !important;*/
+  border-radius: 10px;
+  padding: 5px;
+/*  font-size: 1.2em;*/
+  margin: 15px;
+}
+
+.box-blue-light {
+  background: #d3e4f2; 
+/*  width: max-content !important;*/
+  border-radius: 10px;
+  padding: 5px;
+/*  font-size: 1.2em;*/
+  margin: 15px;
+}
+ 
+
 .box-orange>p>a:link {
     color: white !important;
     border-bottom: 1px solid white !important;
@@ -269,6 +301,17 @@ a:active {
 
 
 /* --------- MISC --------- */
+.tab-content {
+  border-bottom: 1px lightgray solid;
+  border-left: 1px lightgray solid;
+  border-right: 1px lightgray solid;
+  padding: 0px 10px 0 10px;
+}
+
+td {
+  padding: 25px !important;
+}
+
 .splash-slide-text {
   background-color: black;
   color: white !important;

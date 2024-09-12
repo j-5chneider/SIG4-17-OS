@@ -39,6 +39,7 @@ knitr::opts_chunk$set(echo = FALSE,
 
 
 library(fontawesome)
+library(kableExtra)
 ```
 
 
@@ -58,21 +59,316 @@ library(fontawesome)
 3. **Bringing Ideas Together, Plenary Discussion (30min)**
 
 
-## What is open and FAIR data
+## What is open data?
 
-* Description and Definition: Explain what the open science practice is, including its key concepts and terminology.
+\
+
+:::: {.columns }
+::: {.column width="15%" height="300px" .text-center .box-orange-light}
+`r fa("magnifying-glass", height = "120px")`  
+*Definition*
+:::
+
+::: {.column width="70%"}
+* anyone
+* can readily access the data
+* at no more than a reasonable reproduction cost (i.e., internet connection)
+
+[@OpenKnowledgeFoundation.2023a]
+:::
+::::
+
+\
+\
+
+:::: {.columns }
+::: {.column width="15%" height="300px" .text-center .box-blue-light}
+`r fa("circle-exclamation", height = "120px")`  
+*But...*
+:::
+
+::: {.column width="70%"}
+\
+
+* Openness is not a dogma and not a dichotomy
+
+`r fa("arrow-right")` “As open as possible as closed as necessary”
+[@EuropeanCommission.2023a, p. 36]
+:::
+::::
+
+
+
+
+
+
+## What is FAIR data?
+
+\
+
+:::: {.columns }
+::: {.column width="15%" height="300px" .text-center .box-orange-light}
+`r fa("handshake", height = "120px")`  
+*Purpose*
+:::
+
+::: {.column width="70%"}
+\
+
+*“enhancing the ability of machines to automatically find and use the data, in addition to supporting its reuse by individuals”* [@Wilkinson.etal.2016, p. 1]
+
+See also [go-fair.org](https://www.go-fair.org/)
+:::
+::::
+
+\
+\
+
+:::: {.columns }
+::: {.column width="15%" height="300px" .text-center .box-blue-light}
+`r fa("not-equal", height = "120px")`  
+*FAIR vs. open*
+:::
+
+::: {.column width="70%"}
+\
+
+*“does not necessarily mean that data has to be “open” […] even highly protected data can be FAIR data”*  
+[@Kraft.2023a]
+:::
+::::
+
+
+
+
+
+
+
+
+
+## What is FAIR data?
+\
+\
+
+```{r}
+fair_tbl <- data.frame(Principle = c("Findable", "Accessible", "Interoperable", "Reusable"),
+                       `Example of Challenge` = c("You provided your data online, but others <b>don't know</b> of it or <b>can't find</b> it.",
+                                                  "Others found your data,<br />&emsp;&emsp;...but <b>can't download</b> it.<br />&emsp;&emsp;...don't know <b>if</b> or <b>in what ways</b> they may use it.",
+                                                  "Others found and accessed your data, but <b>can't open</b> or <b>work</b> with it.",
+                                                  "Others found, accessed and opend your data, but <b>don't understand</b> the data set."))
+
+fair_tbl %>%
+  kbl(escape = FALSE) %>%
+  kable_material(c("striped"))
+```
+
+
+
+## Potential impact and benefits
+\
+
+**`r fa("book-open")` For science: Reuse**
+
+* FAIR data requirement for
+   - computational reproducibility [@Artner.etal.2021]
+   - replication [@Errington.etal.2021]<br /><br />
+* Use in meta-analyses<br /><br />
+* Answering new research questions<br /><br />
+* Teaching / student theses<br /><br />
+* As historical artefact (mostly qualitative data)
 
 ## Potential impact and benefits
 
-* Potential for Advancing Research: Discuss how this practice can enhance research in learning and instruction. If there is evidence from empirical studies, here would be a good spot to put it.
-* Broader Implications: Explore how the practice might influence the research community.
+\
 
-## Examples of best practices
+**`r fa("user-plus")` For researchers**  
+  
+:::: {.columns}
+::: {.column width="48%" .box-grey-light}
+*Getting cited*
 
-* Successful Implementations: Provide examples of how this practice has been effectively applied in other research settings or fields.
-* Highlight best practices, and any tools or resources that have facilitated successful adoption.
+* studies with available or link to data: **9%** or **25%** higher citation rates [@Piwowar.Vision.2013; @Colavizza.etal.2020]
+* But, **selection bias**: Willingness to share `r fa("arrows-left-right")` strength of evidence and quality of reporting [@Wicherts.etal.2011]  
+* But, **higher trust** in authors openly sharing [@Schneider.etal.2022c]
+:::
+
+::: {.column width="48%" .box-grey-light}
+*Getting funded*
+
+* Funders &#127466;&#127482; @ERC.2022 & &#127465;&#127466; @DFG.2015b require open data
+* Federal agencies [@IEA.2022] and scientific societies [@APA.2017] endorse open sharing
+:::
+
+::: {.column width="48%" .box-grey-light}
+*Getting published*  
+
+* [Some journals](https://topfactor.org/journals?factor=Data+Transparency) mandate *data availability statement*
+:::
+
+::: {.column width="48%" .box-grey-light}
+*Getting hired*  
+
+* new metrics for evaluation on the rise [@CoARA.2022]<br />`r fa("long-arrow-right")` *Signatories: ERC, League of European Research Universities, European University Association ...*
+
+:::
+::::
 
 
+
+## Potential impact and benefits
+
+
+*Researchers perceive that open sharing increases...*
+
+* citations (67%) [@Goodey.etal.2022]
+* impact and visibility (61%) [@Goodey.etal.2022]
+* getting funded (49%) [@CenterforOpenScience.2024]
+* getting published (46%) [@CenterforOpenScience.2024]
+
+Researchers' attitudes: (https://osf.io/8bshv)
+
+* ~ 70% support open data (gneaue Zahl noch nachschauen) (https://osf.io/8bshv)
+* ~ perceived support: 39% = underestimation (https://osf.io/8bshv)
+* 44% have ever shared data  (https://osf.io/8bshv)
+* data sharing for 13% of their studies (https://osf.io/8bshv)
+* ~ 75% will at least probably engage in sharing data
+
+Universal reasons not to share data: https://osf.io/8bshv
+
+* Not required (56%)
+* Not familiar (36%), not common practice (34%), time-consuming (32%)
+
+Specific reasons: https://osf.io/8bshv
+
+* Ethical restrictions 53.8%
+* Difficult to anonymize 43.9%
+* Proprietary/restricted access 41.3%
+* Didn’t want others to misuse 39.1%
+* No suitable repo: 38.8
+
+
+
+
+-#-#-#-#
+
+* have ever shared data: 45.6% (Makel et al., 2021)
+* Estimated Percentage of Colleagues Who Engage in op n data: 24.78 (Makel et al., 2021)
+
+
+
+## Examples of good practices
+
+::: {.panel-tabset .smaller09}
+
+### Findable
+
+**The problem:**  
+Just because we provide data online, doesn't mean that others will find it.  
+  
+We could have the greatest data set to answer further research questions - if our colleagues don't know it exists or can't locate the data, openness will be of little value.
+  
+
+**The solutions:**
+
+* Get a persistent identifier (e.g., DOI), where you provided your data
+  - search for a research data center that fits your needs: [re3data.org](https://www.re3data.org/)
+  - recommended research data centers: [Verbund FDB (education, Germany)](https://www.forschungsdaten-bildung.de/), [RDC at ZPID (psychology, Germany)](https://rdc-psychology.org/), ...
+  - recommended repositories: [Zenodo](https://zenodo.org/), [psycharchives.org](https://www.psycharchives.org/), [osf.io](https://osf.io/), ... 
+* Mention DOI in publication that builds on this data (e.g., in the "data accessibility statement")
+* Describe your data as richly as possible (metadata). *Research data centers* offer form fields tailored to the discipline or data type. With *repositories* use alternative possibilities, such as keyword fields.
+  - e.g., which variables does the quantitative data set contain?
+  - e.g., which topics does your data cover?
+  - e.g., which population did you draw your sample from?
+
+### Accessible
+
+**The problem:**  
+Just because others find our data doesn't mean the *access barriers* are as low as possible and doesn't mean they know *in which way* they are allowed to access it. Examples:
+
+* Providing a link to the data in the text of a paywalled journal article
+* Unclear licensing / use conditions when providing data (e.g., are non-researchers allowed to access the data or is it only open for qualified researchers?)
+
+**The solutions:**
+
+* Make sure access is free of charge (or as cheap as possible)
+  - e.g., by providing link to data in publicly accessible sections of journal articles that are not open access
+  - e.g., by using repositories or research data centers that allow access free of charge
+* Make sure users know if they can access and under which conditions
+  - e.g., *research data centers* ensure that terms of use are clear (who may access under what conditions) and offer different levels of access restriction
+  - e.g., on *repositories* provide a readme-file and an open license (e.g., [CC0](https://creativecommons.org/public-domain/cc0/), [CC-BY](https://creativecommons.org/licenses/by/4.0/deed.de), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.de)) with data sets for access cases
+
+
+### Interoperable
+
+**The problem:**  
+Just because others downloaded our data doesn't mean they can open and manipulate it.
+
+**The solutions:**  
+
+* Use file formats with open licenses
+  - e.g., tabular data: CSV (with additional labelling script), RData
+  - e.g., text data: PDF, HTML, ODT, RTF
+* Make sure users know how different files are related to one another
+  - e.g., define which file contains student data and which teacher data
+  - e.g., define which file contains data from cohort 1 and which cohort 2, ...
+
+### Reusable
+
+**The problem:**  
+Just because others opened our data doesn't mean they understand the data and its use-conditions. Examples:
+
+* Others can't understand what the column names of the tabular data set mean: Which columns in the data set relate to which variables in the journal article?
+* Can someone from sociology use the data set from psychology they found on osf.io?
+* Does someone reusing a data set have to cite the authors?
+
+**The solutions:**  
+
+* Adhere to standards in folder organization
+  - e.g., [PSYCH-DS](https://psych-ds.github.io/) (see technical specification draft)
+* Rich description/explanation of what user will find *in* the data set (≠ meta descriptions about the data set *as a whole*, as for accessibility)
+  - e.g., provide a codebook. How to semi-automatically create a codebook, see the R package [`codebook`](https://cran.r-project.org/web/packages/codebook/readme/README.html)
+* Provide a license for the use-cases
+  - again, *research data centers* ensure that terms of use are clear (who may use under what conditions)
+  - again, on *repositories* provide a readme-file and an open license (e.g., [CC0](https://creativecommons.org/public-domain/cc0/), [CC-BY](https://creativecommons.org/licenses/by/4.0/deed.de), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.de)) with data sets for the use-cases
+:::
+
+
+## Examples of good practices
+\
+
+### tldr;
+
+*What typical data sharing might look like:*
+
+```{r}
+fair_tbl <- data.frame(ToDo = c("<b>describe</b> what's in the data", "<b>share</b> via repository/ research data center (rdc) <br />that offers DOI", "<b>connect</b> DOI with paper"),
+                       `Tools/Options` = c("<b>quantitative:</b> Create codebook via <a href='https://rubenarslan.github.io/codebook/articles/codebook_tutorial.html'>codebook R package</a><br /><b>qualitative:</b> provide methods and/or field report",
+                                           "&#127466;&#127482; <a href='https://zenodo.org/'>Zenodo</a> (repository; option: visibility restricted)<br />&#127482;&#127480; <a href='https://osf.io/'>OSF</a> (repository; option: project private)<br />&#127482;&#127480; <a href='https://www.openicpsr.org/openicpsr/'>Open ICPSR</a> (rdc)<br />&#127468;&#127463; <a href='https://www.data-archive.ac.uk/'>UK Data Archive</a> (rdc)<br />&#127465;&#127466; <a href='https://www.forschungsdaten-bildung.de/'>VerbundFDB</a> (rdc)",
+                                           "put in section 'data availability', 'open practices', <br />'supplemental material', ..."))
+
+fair_tbl %>%
+  kbl(escape = FALSE) %>%
+  kable_material(c("striped"))
+```
+
+
+
+## Examples of good practices
+
+* Example of publication with **FAIR open data**: 
+   - paper: <https://doi.org/10.1098/rsos.230595> (link to data in section "Data accessibility")
+   - open data: <https://doi.org/10.5281/zenodo.7886776>
+   - codebook in same repo<br /><br />
+* Example of publication with **synthetic FAIR data**: 
+   - paper: <https://doi.org/10.1007/s12110-023-09460-4> (link to data in section "Data Availability")
+   - synthetic data: <https://osf.io/qkr9a/>
+   - codebook: <https://osf.io/wced4><br /><br />
+* Example of publication with synthetic **FAIR data with restricted access**: 
+   - paper: <https://doi.org/10.1016/j.yhbeh.2024.105542> (link to data in section "Transparency and openness")
+   - restricted data: <https://doi.org/10.7802/2330> (curated at a research data center)
+   - codebook available after login
+   
+   
 ## Introduction of Subgroup Discussions
 
 * Short introduction to Model for Managing Complex Change (Lippitt-Knoster)
