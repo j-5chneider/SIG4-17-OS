@@ -59,6 +59,7 @@ library(kableExtra)
 3. **Bringing Ideas Together, Plenary Discussion (30min)**
 
 
+
 ## What is open data?
 
 \
