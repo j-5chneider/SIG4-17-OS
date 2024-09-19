@@ -215,47 +215,6 @@ fair_tbl %>%
 
 
 
-## Potential impact and benefits
-
-
-*Researchers perceive that open sharing increases...*
-
-* citations (67%) [@Goodey.etal.2022]
-* impact and visibility (61%) [@Goodey.etal.2022]
-* getting funded (49%) [@CenterforOpenScience.2024]
-* getting published (46%) [@CenterforOpenScience.2024]
-
-Researchers' attitudes: (https://osf.io/8bshv)
-
-* ~ 70% support open data (gneaue Zahl noch nachschauen) (https://osf.io/8bshv)
-* ~ perceived support: 39% = underestimation (https://osf.io/8bshv)
-* 44% have ever shared data  (https://osf.io/8bshv)
-* data sharing for 13% of their studies (https://osf.io/8bshv)
-* ~ 75% will at least probably engage in sharing data
-
-Universal reasons not to share data: https://osf.io/8bshv
-
-* Not required (56%)
-* Not familiar (36%), not common practice (34%), time-consuming (32%)
-
-Specific reasons: https://osf.io/8bshv
-
-* Ethical restrictions 53.8%
-* Difficult to anonymize 43.9%
-* Proprietary/restricted access 41.3%
-* Didn’t want others to misuse 39.1%
-* No suitable repo: 38.8
-
-
-
-
--#-#-#-#
-
-* have ever shared data: 45.6% (Makel et al., 2021)
-* Estimated Percentage of Colleagues Who Engage in op n data: 24.78 (Makel et al., 2021)
-
-
-
 ## Examples of good practices
 
 ::: {.panel-tabset .smaller09}
@@ -373,7 +332,10 @@ fair_tbl %>%
 
 * Short introduction to Model for Managing Complex Change (Lippitt-Knoster)
 * Explanation of how we document the outcomes of subgroup discussions
-
+  - Link to document prereg: https://t1p.de/sig-prereg
+  - Link to document open data: https://t1p.de/sig-data
+  - Link to document open code: https://t1p.de/sig-code
+* If you want to connect: Put your Name and email at the bottom of the google docs document
 
 
 
