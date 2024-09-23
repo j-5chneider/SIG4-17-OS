@@ -62,7 +62,7 @@ library(kableExtra)
 
 ## What is open data?
 
-\
+
 
 :::: {.columns }
 ::: {.column width="15%" height="300px" .text-center .box-orange-light}
@@ -328,6 +328,360 @@ fair_tbl %>%
    - restricted data: <https://doi.org/10.7802/2330> (curated at a research data center)
    - codebook available after login
    
+# Open and Reproducible Code
+
+## Why Reproducibility?
+
+* Every analysis has "inductive bias" [@sterkenburgNofreelunchTheoremsSupervised2021]
+    + What we learn from the data depends, in part, on how we analyze it
+* Implicit steps in the analysis make inductive bias *intractable* [@peikertTransparencyOpenScience2023]
+    + We don't know how, or how much, they influenced our results
+* *Reproducibility* makes inductive bias tractable
+* Reproducible code enables quantifying and studying inductive bias
+* Ideally, your whole analysis is a sealed "pipeline": data in, results out
+* Multiverse analysis: conducting a study of the impact of all "reasonable" analysis decisions on the estimand/conclusion [@steegenIncreasingTransparencyMultiverse2016]
+* Reproducibility -> Scalability
+    + Apply same method in new study
+    + Redo analysis when new data come in
+    + Incorporate analysis into application for stakeholders, etc
+
+
+## Reproducibility is Challenging
+
+#### Where do you start?
+
+#### What tools do you need to learn?
+
+#### What workflow is right for you?
+
+## Introducing WORCS
+
+### **W**orkflow for **O**pen **R**eproducible **C**ode in **S**cience
+
+- Standardized workflow
+- Low threshold, high ceiling
+- Conceptual platform-independent principles: https://psyarxiv.com/k4wde
+- "One-click" solution for R-users: https://cran.r-project.org/package=worcs
+- Defaults based on best practices (several experts contributed)
+- Compatible with journal/university requirements and other workflows
+- Pulling down the learning curve!
+
+![learningcurve](images/learningcurve.svg)
+
+
+## The tools
+
+### 1. Dynamic document generation
+### 2. Version control
+### 3. Dependency management
+
+
+
+## 1. Dynamic document generation
+
+:::: {.columns}
+
+::: {.column width="70%"}
+- Paper consists of **text and code**
+- Results, figures, and tables automatically generated
+- Formatted as APA paper (including citations!)
+:::
+
+::: {.column width="30%"}
+
+```{r out.width="50%"}
+knitr::include_graphics("https://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png")
+```
+
+
+:::
+
+::::
+
+
+### Important because:
+
+- Save time from copy-pasting output and formatting paper
+- Eliminate human error in copying results;
+- When revising the paper, **all** results are automatically updated;
+- Reproducible by default: Just generate the document
+
+
+## R Markdown example
+
+![rmarkdown](images/rmarkdown_example.png)
+
+
+
+## R Markdown example rendered
+
+![data-analysis](images/markdown_analysis.png)
+![citation](images/markdown_citation.png)
+
+
+## 2. Version control (using Git)
+
+### Why version control?
+
+:::: {.columns}
+
+::: {.column width="70%"}
+- NO MORE manuscript_final_final_SERIOUSLYFINAL.doc
+
+- "Track Changes" on steroids: record entire project history
+
+- If something breaks, you can figure out what happened.
+
+- Facilitates collaboration and experimentation!
+:::
+
+
+
+::: {.column width="30%"}
+
+```{r}
+knitr::include_graphics("http://www.phdcomics.com/comics/archive/phd101212s.gif")
+```
+
+:::
+
+::::
+
+
+
+## 2. Version control (using Git)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+
+```{r, out.width="50%", echo = FALSE}
+knitr::include_graphics("images/play-changes.svg")
+```
+
+Tracks changes to (text-based) files line by line:
+
+* _add_ files to your repository
+* _commit_ changes to these files
+* _push_ all commits to remote repository (private backup or public online supplement)
+
+:::
+
+
+
+::: {.column width="50%"}
+```{r, out.width="50%", echo = FALSE}
+knitr::include_graphics("images/git-staging-area.svg")
+```
+
+One command in `worcs`: `git_update("Describe your changes")`
+:::
+
+::::
+
+
+Image credit: [Software Carpentries](https://swcarpentry.github.io/git-novice/)
+
+
+
+## Introducing GitHub
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+- `worcs` repository is backed up in a remote repository like [GitHub](https://github.com/);
+
+- GitHub is a **"cloud backup"** with **"social networking"** features
+    + Clone other people's repository to reproduce or build upon them
+    + Open Issues with questions or comments about the work
+    + Send suggested changes as a "Pull request"
+
+- GitHub can be used to 'tag' specific states of the repository, e.g. a preregistration.
+]
+
+:::
+
+::: {.column width="30%"}
+
+![](images/preregistration.png)
+
+:::
+
+::::
+
+
+
+
+## Important because:
+
+- Complete backup of entire project history
+    * Go back to previous version if you want
+    * Try new things, don't worry about losing work
+    * Prove that you preregistered your plans and followed them
+- Easy collaboration online (even with strangers)
+    * People can copy your project and build on it
+- GitHub can be your preregistration, your research archive, supplementary materials, comments section, etc.
+- Connects to OSF.io project page
+    * Improves **F**indability
+    * Get DOI for project and/or specific resources
+- Connects to Zenodo
+    * Get DOI for project and/or specific resources
+    * Store project snapshot
+
+
+## 3. Dependency management
+
+- To make project reproducible, people must have access to your (exact) **software dependencies**
+    * For R-users, these are `R-packages`
+
+- Difficult trade-off:
+
+![](images/dependencytradeoff.svg)
+
+
+## Dependency management in WORCS
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+
+
+- Maintains text-based list of packages, their version,  
+  and origin (e.g., “CRAN”, “Bioconductor”, “GitHub”)
+- This list can be version-controlled with Git;
+- When a user loads the project,  
+    `renv` installs all dependencies from the list
+
+### Important because:
+
+- Essential for reproducibility
+- Good for collaboration (everybody has same versions)
+- Nice to your "future self": Your code will work in the future
+
+:::
+
+::: {.column width="30%"}
+
+![](https://rstudio.github.io/renv/reference/figures/logo.svg)
+
+
+:::
+
+::::
+
+
+
+    
+
+<!-- With the background knowledge in mind, let's have another look at the workflow -->
+
+## Unique features in `worcs`
+
+* RStudio template
+* Automatic installation check: `check_worcs_installation()`
+* Easy GitHub integration
+    - Add URL during project creation
+    - `git_update("Commit message")`
+    - Automatically reproduce results in the cloud!
+* Manuscript and preregistration templates
+    - From `rticles`, `papaja`, and `prereg`
+    - Original templates for secondary- and longitudinal data
+* Data sharing solutions
+* Cite `@essential` and `@@nonessential`
+* Integration with `targets`
+* WORCS checklist and badge
+
+
+## Sharing data in WORCS
+
+- Reproducibility requires open data
+- Some data may be (privacy) sensitive
+    * E.g., children's data, veterans' data, patient data
+
+#### Use `open_data()`:
+
+- Original data made public
+- Default is a `.csv` (text based, human / machine readable)
+- Other save / load functions can be used
+
+#### Use `closed_data()`:
+
+- Original data saved locally;
+- Synthetic data created using `synthetic()`
+- Synthetic data made public (default: `.csv`)
+- Unique ID of original data made public (so people can audit your work)
+
+
+## Sharing data in WORCS
+
+#### Loading data `load_data()`:
+
+- **If** original data are present, load them...
+- ...**Else**, load synthetic data
+- Scripts can thus ALWAYS be reproduced
+- People can create a working script using synthetic data, and send it to you to run on original data
+- Load function recorded in `.worcs` file; default `read.csv()`
+
+
+## Reproducing WORCS Project
+
+1. Create entry point (e.g., `manuscript.Rmd`)
+2. Define recipe (e.g., `rmarkdown::render("manuscript.Rmd")`)
+3. Snapshot endpoints recipe (e.g., `manuscript.pdf`, `table1.csv`)
+
+`worcs::reproduce()` generates the endpoints from the entry point via the recipe
+
+`worcs::check_endpoints()` verifies that the results are identical
+
+
+## Continuous Integration
+
+Run `worcs::reproduce()` on GitHub via GitHub Actions
+
+![](images/action_reproduce.png)
+
+
+## `targets` Integration
+
+Targets creates a pipeline for computationally intensive workflows
+
+* Each step is only re-run if:
+    + The step changed
+    + Its inputs changed
+  
+This is perfectly compatible with `worcs`!
+
+## Using `targets`
+
+* Select "Use `targets`" when creating a WORCS project
+* Use `worcs::add_targets()`
+* Select "Target Markdown" as output format
+
+A `targets` workflow is executed by running `targets::tar_make()`
+
+* `worcs` sets the recipe to `targets::tar_make()`, so `worcs::reproduce()` runs it
+* `worcs` makes sure that the last step of the pipeline is to render an Rmarkdown to report the results
+
+
+
+## For non-R-users
+
+* WORCS-paper addresses the **conceptual** workflow
+* Covers issues/decisions you have to consider for Open Science, regardless of software
+* `worcs` is a good starting point for new R-users
+    + Setup Tutorial to help install everything
+    + Tricky issues (like project management and using Git) are ~automatic when using the WORCS template
+    + Automatic check in case you get stuck: `check_worcs_installation()`
+* Learn good habits from the start; don't reinvent the wheel
+    
+
+## Find out more:
+
+<div style="background-color:#ffffff; text-align:center; vertical-align: middle; padding:20px 47px;"> <a href="https://cjvanlissa.github.io/worcshop/">cjvanlissa.github.io/worcshop</a><br><a href="https://cjvanlissa.github.io/worcs/">cjvanlissa.github.io/worcs</a> </div>
+
    
 ## Introduction of Subgroup Discussions
 
