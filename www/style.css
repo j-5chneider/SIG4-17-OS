@@ -349,3 +349,7 @@ td {
   width: 45% !important;
   boder: red solid 2px !important;
 }
+
+.splash-slide {
+  margin-top: 25%;
+}

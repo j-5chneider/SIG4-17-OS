@@ -62,7 +62,7 @@ library(kableExtra)
 
 ## What is open data?
 
-
+\
 
 :::: {.columns }
 ::: {.column width="15%" height="300px" .text-center .box-orange-light}
@@ -185,7 +185,7 @@ fair_tbl %>%
 **`r fa("user-plus")` For researchers**  
   
 :::: {.columns}
-::: {.column width="48%" .box-grey-light}
+::: {.column width="47%" .box-grey-light}
 *Getting cited*
 
 * studies with available or link to data: **9%** or **25%** higher citation rates [@Piwowar.Vision.2013; @Colavizza.etal.2020]
@@ -193,20 +193,20 @@ fair_tbl %>%
 * But, **higher trust** in authors openly sharing [@Schneider.etal.2022c]
 :::
 
-::: {.column width="48%" .box-grey-light}
+::: {.column width="47%" .box-grey-light}
 *Getting funded*
 
 * Funders &#127466;&#127482; @ERC.2022 & &#127465;&#127466; @DFG.2015b require open data
 * Federal agencies [@IEA.2022] and scientific societies [@APA.2017] endorse open sharing
 :::
 
-::: {.column width="48%" .box-grey-light}
+::: {.column width="47%" .box-grey-light}
 *Getting published*  
 
 * [Some journals](https://topfactor.org/journals?factor=Data+Transparency) mandate *data availability statement*
 :::
 
-::: {.column width="48%" .box-grey-light}
+::: {.column width="47%" .box-grey-light}
 *Getting hired*  
 
 * new metrics for evaluation on the rise [@CoARA.2022]<br />`r fa("long-arrow-right")` *Signatories: ERC, League of European Research Universities, European University Association ...*
@@ -328,18 +328,18 @@ fair_tbl %>%
    - restricted data: <https://doi.org/10.7802/2330> (curated at a research data center)
    - codebook available after login
    
-# Open and Reproducible Code
+## Open and Reproducible Code {.splash-slide}
 
 ## Why Reproducibility?
 
-* Every analysis has "inductive bias" [@sterkenburgNofreelunchTheoremsSupervised2021]
+* Every analysis has "inductive bias"  [@Sterkenburg.Grunwald.2021]
     + What we learn from the data depends, in part, on how we analyze it
-* Implicit steps in the analysis make inductive bias *intractable* [@peikertTransparencyOpenScience2023]
+* Implicit steps in the analysis make inductive bias *intractable* [@Peikert.2023]
     + We don't know how, or how much, they influenced our results
 * *Reproducibility* makes inductive bias tractable
 * Reproducible code enables quantifying and studying inductive bias
 * Ideally, your whole analysis is a sealed "pipeline": data in, results out
-* Multiverse analysis: conducting a study of the impact of all "reasonable" analysis decisions on the estimand/conclusion [@steegenIncreasingTransparencyMultiverse2016]
+* Multiverse analysis: conducting a study of the impact of all "reasonable" analysis decisions on the estimand/conclusion [@Steegen.etal.2016]
 * Reproducibility -> Scalability
     + Apply same method in new study
     + Redo analysis when new data come in
@@ -565,7 +565,7 @@ Image credit: [Software Carpentries](https://swcarpentry.github.io/git-novice/)
 
 ::: {.column width="30%"}
 
-![](https://rstudio.github.io/renv/reference/figures/logo.svg)
+<img src="https://rstudio.github.io/renv/reference/figures/logo.svg" width="100%" height="100%" />
 
 
 :::
