@@ -684,15 +684,31 @@ A `targets` workflow is executed by running `targets::tar_make()`
 
    
 ## Introduction of Subgroup Discussions
+![](www/change-model-1.jpg)
 
-* Short introduction to Model for Managing Complex Change (Lippitt-Knoster)
-* Explanation of how we document the outcomes of subgroup discussions
-  - Link to document prereg: https://t1p.de/sig-prereg
-  - Link to document open data: https://t1p.de/sig-data
-  - Link to document open code: https://t1p.de/sig-code
-* If you want to connect: Put your Name and email at the bottom of the google docs document
+## Introduction of Subgroup Discussions
+![](www/change-model-2.jpg)
 
+## Introduction of Subgroup Discussions
+![](www/change-model-3.jpg)
 
+## Introduction of Subgroup Discussions
+![](www/change-model-4.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/change-model-5.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/change-model-6.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/group-work1.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/group-work2.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/group-work3.jpg)
 
 # Thank you
 

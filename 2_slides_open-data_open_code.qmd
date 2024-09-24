@@ -1,0 +1,748 @@
+---
+title: "Promoting Open Science<br />in Learning Research"
+subtitle: "Collaborative Exploration of Future Directions"
+title-slide-attributes:
+  data-background-image: www/title-bg.jpg
+  data-background-size: cover
+  #data-background-opacity: "0.3"
+author: "<br /><br /><b>Jürgen Schneider</b><br />*Caspar J. Van Lissa, Marjan Bakker and Olmo van den Akker<br /><br />EARLI SIG 4/17*"
+date: today # "20. Mar 2024"
+date-format: "DD MMMM YYYY"
+format: 
+  revealjs:
+      theme: [white] # sky default
+      logo: www/dipf-logo.png
+      footer: "Slides: [link pending](#)"
+      smaller: true
+      scrollable: true
+      transition: fade
+      width: 1500
+      height: 850
+      hide-inactive-cursor: false
+      embed-resources: true
+editor: source
+editor_options: 
+  chunk_output_type: console
+bibliography: www/references.bib
+css: www/style.css
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message=FALSE, 
+                      warning=FALSE)
+### DOWNLOAD NEWEST SOURCES
+## befindet sich im DIPF Ordner
+# download.file("https://drive.google.com/uc?export=download&id=1ASV99YHMHSNChSNzqbZwvz2SiqYvmqO_",
+#               "www/references.bib", overwrite = T)
+
+
+library(fontawesome)
+library(kableExtra)
+```
+
+
+## Overview of the session
+
+\
+
+1. **Introduction to 3 open science aspects (10min each)**
+   - Preregistration & Registered Reports
+   - Open and FAIR data
+   - Open and Reproducible Code<br /><br />
+2. **Subgroup Discussions (60min)**
+   - One group for each OS aspect
+   - Applying a model for managing complex change"
+   - For each OS aspect: Where do you see the greatest need for change?
+   - What specific actions can we take or initiate?<br /><br />
+3. **Bringing Ideas Together, Plenary Discussion (30min)**
+
+
+
+## What is open data?
+
+\
+
+:::: {.columns }
+::: {.column width="15%" height="300px" .text-center .box-orange-light}
+`r fa("magnifying-glass", height = "120px")`  
+*Definition*
+:::
+
+::: {.column width="70%"}
+* anyone
+* can readily access the data
+* at no more than a reasonable reproduction cost (i.e., internet connection)
+
+[@OpenKnowledgeFoundation.2023a]
+:::
+::::
+
+\
+\
+
+:::: {.columns }
+::: {.column width="15%" height="300px" .text-center .box-blue-light}
+`r fa("circle-exclamation", height = "120px")`  
+*But...*
+:::
+
+::: {.column width="70%"}
+\
+
+* Openness is not a dogma and not a dichotomy
+
+`r fa("arrow-right")` “As open as possible as closed as necessary”
+[@EuropeanCommission.2023a, p. 36]
+:::
+::::
+
+
+
+
+
+
+## What is FAIR data?
+
+\
+
+:::: {.columns }
+::: {.column width="15%" height="300px" .text-center .box-orange-light}
+`r fa("handshake", height = "120px")`  
+*Purpose*
+:::
+
+::: {.column width="70%"}
+\
+
+*“enhancing the ability of machines to automatically find and use the data, in addition to supporting its reuse by individuals”* [@Wilkinson.etal.2016, p. 1]
+
+See also [go-fair.org](https://www.go-fair.org/)
+:::
+::::
+
+\
+\
+
+:::: {.columns }
+::: {.column width="15%" height="300px" .text-center .box-blue-light}
+`r fa("not-equal", height = "120px")`  
+*FAIR vs. open*
+:::
+
+::: {.column width="70%"}
+\
+
+*“does not necessarily mean that data has to be “open” […] even highly protected data can be FAIR data”*  
+[@Kraft.2023a]
+:::
+::::
+
+
+
+
+
+
+
+
+
+## What is FAIR data?
+\
+\
+
+```{r}
+fair_tbl <- data.frame(Principle = c("Findable", "Accessible", "Interoperable", "Reusable"),
+                       `Example of Challenge` = c("You provided your data online, but others <b>don't know</b> of it or <b>can't find</b> it.",
+                                                  "Others found your data,<br />&emsp;&emsp;...but <b>can't download</b> it.<br />&emsp;&emsp;...don't know <b>if</b> or <b>in what ways</b> they may use it.",
+                                                  "Others found and accessed your data, but <b>can't open</b> or <b>work</b> with it.",
+                                                  "Others found, accessed and opend your data, but <b>don't understand</b> the data set."))
+
+fair_tbl %>%
+  kbl(escape = FALSE) %>%
+  kable_material(c("striped"))
+```
+
+
+
+## Potential impact and benefits
+\
+
+**`r fa("book-open")` For science: Reuse**
+
+* FAIR data requirement for
+   - computational reproducibility [@Artner.etal.2021]
+   - replication [@Errington.etal.2021]<br /><br />
+* Use in meta-analyses<br /><br />
+* Answering new research questions<br /><br />
+* Teaching / student theses<br /><br />
+* As historical artefact (mostly qualitative data)
+
+## Potential impact and benefits
+
+\
+
+**`r fa("user-plus")` For researchers**  
+  
+:::: {.columns}
+::: {.column width="47%" .box-grey-light}
+*Getting cited*
+
+* studies with available or link to data: **9%** or **25%** higher citation rates [@Piwowar.Vision.2013; @Colavizza.etal.2020]
+* But, **selection bias**: Willingness to share `r fa("arrows-left-right")` strength of evidence and quality of reporting [@Wicherts.etal.2011]  
+* But, **higher trust** in authors openly sharing [@Schneider.etal.2022c]
+:::
+
+::: {.column width="47%" .box-grey-light}
+*Getting funded*
+
+* Funders &#127466;&#127482; @ERC.2022 & &#127465;&#127466; @DFG.2015b require open data
+* Federal agencies [@IEA.2022] and scientific societies [@APA.2017] endorse open sharing
+:::
+
+::: {.column width="47%" .box-grey-light}
+*Getting published*  
+
+* [Some journals](https://topfactor.org/journals?factor=Data+Transparency) mandate *data availability statement*
+:::
+
+::: {.column width="47%" .box-grey-light}
+*Getting hired*  
+
+* new metrics for evaluation on the rise [@CoARA.2022]<br />`r fa("long-arrow-right")` *Signatories: ERC, League of European Research Universities, European University Association ...*
+
+:::
+::::
+
+
+
+## Examples of good practices
+
+::: {.panel-tabset .smaller09}
+
+### Findable
+
+**The problem:**  
+Just because we provide data online, doesn't mean that others will find it.  
+  
+We could have the greatest data set to answer further research questions - if our colleagues don't know it exists or can't locate the data, openness will be of little value.
+  
+
+**The solutions:**
+
+* Get a persistent identifier (e.g., DOI), where you provided your data
+  - search for a research data center that fits your needs: [re3data.org](https://www.re3data.org/)
+  - recommended research data centers: [Verbund FDB (education, Germany)](https://www.forschungsdaten-bildung.de/), [RDC at ZPID (psychology, Germany)](https://rdc-psychology.org/), ...
+  - recommended repositories: [Zenodo](https://zenodo.org/), [psycharchives.org](https://www.psycharchives.org/), [osf.io](https://osf.io/), ... 
+* Mention DOI in publication that builds on this data (e.g., in the "data accessibility statement")
+* Describe your data as richly as possible (metadata). *Research data centers* offer form fields tailored to the discipline or data type. With *repositories* use alternative possibilities, such as keyword fields.
+  - e.g., which variables does the quantitative data set contain?
+  - e.g., which topics does your data cover?
+  - e.g., which population did you draw your sample from?
+
+### Accessible
+
+**The problem:**  
+Just because others find our data doesn't mean the *access barriers* are as low as possible and doesn't mean they know *in which way* they are allowed to access it. Examples:
+
+* Providing a link to the data in the text of a paywalled journal article
+* Unclear licensing / use conditions when providing data (e.g., are non-researchers allowed to access the data or is it only open for qualified researchers?)
+
+**The solutions:**
+
+* Make sure access is free of charge (or as cheap as possible)
+  - e.g., by providing link to data in publicly accessible sections of journal articles that are not open access
+  - e.g., by using repositories or research data centers that allow access free of charge
+* Make sure users know if they can access and under which conditions
+  - e.g., *research data centers* ensure that terms of use are clear (who may access under what conditions) and offer different levels of access restriction
+  - e.g., on *repositories* provide a readme-file and an open license (e.g., [CC0](https://creativecommons.org/public-domain/cc0/), [CC-BY](https://creativecommons.org/licenses/by/4.0/deed.de), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.de)) with data sets for access cases
+
+
+### Interoperable
+
+**The problem:**  
+Just because others downloaded our data doesn't mean they can open and manipulate it.
+
+**The solutions:**  
+
+* Use file formats with open licenses
+  - e.g., tabular data: CSV (with additional labelling script), RData
+  - e.g., text data: PDF, HTML, ODT, RTF
+* Make sure users know how different files are related to one another
+  - e.g., define which file contains student data and which teacher data
+  - e.g., define which file contains data from cohort 1 and which cohort 2, ...
+
+### Reusable
+
+**The problem:**  
+Just because others opened our data doesn't mean they understand the data and its use-conditions. Examples:
+
+* Others can't understand what the column names of the tabular data set mean: Which columns in the data set relate to which variables in the journal article?
+* Can someone from sociology use the data set from psychology they found on osf.io?
+* Does someone reusing a data set have to cite the authors?
+
+**The solutions:**  
+
+* Adhere to standards in folder organization
+  - e.g., [PSYCH-DS](https://psych-ds.github.io/) (see technical specification draft)
+* Rich description/explanation of what user will find *in* the data set (≠ meta descriptions about the data set *as a whole*, as for accessibility)
+  - e.g., provide a codebook. How to semi-automatically create a codebook, see the R package [`codebook`](https://cran.r-project.org/web/packages/codebook/readme/README.html)
+* Provide a license for the use-cases
+  - again, *research data centers* ensure that terms of use are clear (who may use under what conditions)
+  - again, on *repositories* provide a readme-file and an open license (e.g., [CC0](https://creativecommons.org/public-domain/cc0/), [CC-BY](https://creativecommons.org/licenses/by/4.0/deed.de), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.de)) with data sets for the use-cases
+:::
+
+
+## Examples of good practices
+\
+
+### tldr;
+
+*What typical data sharing might look like:*
+
+```{r}
+fair_tbl <- data.frame(ToDo = c("<b>describe</b> what's in the data", "<b>share</b> via repository/ research data center (rdc) <br />that offers DOI", "<b>connect</b> DOI with paper"),
+                       `Tools/Options` = c("<b>quantitative:</b> Create codebook via <a href='https://rubenarslan.github.io/codebook/articles/codebook_tutorial.html'>codebook R package</a><br /><b>qualitative:</b> provide methods and/or field report",
+                                           "&#127466;&#127482; <a href='https://zenodo.org/'>Zenodo</a> (repository; option: visibility restricted)<br />&#127482;&#127480; <a href='https://osf.io/'>OSF</a> (repository; option: project private)<br />&#127482;&#127480; <a href='https://www.openicpsr.org/openicpsr/'>Open ICPSR</a> (rdc)<br />&#127468;&#127463; <a href='https://www.data-archive.ac.uk/'>UK Data Archive</a> (rdc)<br />&#127465;&#127466; <a href='https://www.forschungsdaten-bildung.de/'>VerbundFDB</a> (rdc)",
+                                           "put in section 'data availability', 'open practices', <br />'supplemental material', ..."))
+
+fair_tbl %>%
+  kbl(escape = FALSE) %>%
+  kable_material(c("striped"))
+```
+
+
+
+## Examples of good practices
+
+* Example of publication with **FAIR open data**: 
+   - paper: <https://doi.org/10.1098/rsos.230595> (link to data in section "Data accessibility")
+   - open data: <https://doi.org/10.5281/zenodo.7886776>
+   - codebook in same repo<br /><br />
+* Example of publication with **synthetic FAIR data**: 
+   - paper: <https://doi.org/10.1007/s12110-023-09460-4> (link to data in section "Data Availability")
+   - synthetic data: <https://osf.io/qkr9a/>
+   - codebook: <https://osf.io/wced4><br /><br />
+* Example of publication with synthetic **FAIR data with restricted access**: 
+   - paper: <https://doi.org/10.1016/j.yhbeh.2024.105542> (link to data in section "Transparency and openness")
+   - restricted data: <https://doi.org/10.7802/2330> (curated at a research data center)
+   - codebook available after login
+   
+## Open and Reproducible Code {.splash-slide}
+
+## Why Reproducibility?
+
+* Every analysis has "inductive bias"  [@Sterkenburg.Grunwald.2021]
+    + What we learn from the data depends, in part, on how we analyze it
+* Implicit steps in the analysis make inductive bias *intractable* [@Peikert.2023]
+    + We don't know how, or how much, they influenced our results
+* *Reproducibility* makes inductive bias tractable
+* Reproducible code enables quantifying and studying inductive bias
+* Ideally, your whole analysis is a sealed "pipeline": data in, results out
+* Multiverse analysis: conducting a study of the impact of all "reasonable" analysis decisions on the estimand/conclusion [@Steegen.etal.2016]
+* Reproducibility -> Scalability
+    + Apply same method in new study
+    + Redo analysis when new data come in
+    + Incorporate analysis into application for stakeholders, etc
+
+
+## Reproducibility is Challenging
+
+#### Where do you start?
+
+#### What tools do you need to learn?
+
+#### What workflow is right for you?
+
+## Introducing WORCS
+
+### **W**orkflow for **O**pen **R**eproducible **C**ode in **S**cience
+
+- Standardized workflow
+- Low threshold, high ceiling
+- Conceptual platform-independent principles: https://psyarxiv.com/k4wde
+- "One-click" solution for R-users: https://cran.r-project.org/package=worcs
+- Defaults based on best practices (several experts contributed)
+- Compatible with journal/university requirements and other workflows
+- Pulling down the learning curve!
+
+![learningcurve](images/learningcurve.svg)
+
+
+## The tools
+
+### 1. Dynamic document generation
+### 2. Version control
+### 3. Dependency management
+
+
+
+## 1. Dynamic document generation
+
+:::: {.columns}
+
+::: {.column width="70%"}
+- Paper consists of **text and code**
+- Results, figures, and tables automatically generated
+- Formatted as APA paper (including citations!)
+:::
+
+::: {.column width="30%"}
+
+```{r out.width="50%"}
+knitr::include_graphics("https://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png")
+```
+
+
+:::
+
+::::
+
+
+### Important because:
+
+- Save time from copy-pasting output and formatting paper
+- Eliminate human error in copying results;
+- When revising the paper, **all** results are automatically updated;
+- Reproducible by default: Just generate the document
+
+
+## R Markdown example
+
+![rmarkdown](images/rmarkdown_example.png)
+
+
+
+## R Markdown example rendered
+
+![data-analysis](images/markdown_analysis.png)
+![citation](images/markdown_citation.png)
+
+
+## 2. Version control (using Git)
+
+### Why version control?
+
+:::: {.columns}
+
+::: {.column width="70%"}
+- NO MORE manuscript_final_final_SERIOUSLYFINAL.doc
+
+- "Track Changes" on steroids: record entire project history
+
+- If something breaks, you can figure out what happened.
+
+- Facilitates collaboration and experimentation!
+:::
+
+
+
+::: {.column width="30%"}
+
+```{r}
+knitr::include_graphics("http://www.phdcomics.com/comics/archive/phd101212s.gif")
+```
+
+:::
+
+::::
+
+
+
+## 2. Version control (using Git)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+
+```{r, out.width="50%", echo = FALSE}
+knitr::include_graphics("images/play-changes.svg")
+```
+
+Tracks changes to (text-based) files line by line:
+
+* _add_ files to your repository
+* _commit_ changes to these files
+* _push_ all commits to remote repository (private backup or public online supplement)
+
+:::
+
+
+
+::: {.column width="50%"}
+```{r, out.width="50%", echo = FALSE}
+knitr::include_graphics("images/git-staging-area.svg")
+```
+
+One command in `worcs`: `git_update("Describe your changes")`
+:::
+
+::::
+
+
+Image credit: [Software Carpentries](https://swcarpentry.github.io/git-novice/)
+
+
+
+## Introducing GitHub
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+- `worcs` repository is backed up in a remote repository like [GitHub](https://github.com/);
+
+- GitHub is a **"cloud backup"** with **"social networking"** features
+    + Clone other people's repository to reproduce or build upon them
+    + Open Issues with questions or comments about the work
+    + Send suggested changes as a "Pull request"
+
+- GitHub can be used to 'tag' specific states of the repository, e.g. a preregistration.
+]
+
+:::
+
+::: {.column width="30%"}
+
+![](images/preregistration.png)
+
+:::
+
+::::
+
+
+
+
+## Important because:
+
+- Complete backup of entire project history
+    * Go back to previous version if you want
+    * Try new things, don't worry about losing work
+    * Prove that you preregistered your plans and followed them
+- Easy collaboration online (even with strangers)
+    * People can copy your project and build on it
+- GitHub can be your preregistration, your research archive, supplementary materials, comments section, etc.
+- Connects to OSF.io project page
+    * Improves **F**indability
+    * Get DOI for project and/or specific resources
+- Connects to Zenodo
+    * Get DOI for project and/or specific resources
+    * Store project snapshot
+
+
+## 3. Dependency management
+
+- To make project reproducible, people must have access to your (exact) **software dependencies**
+    * For R-users, these are `R-packages`
+
+- Difficult trade-off:
+
+![](images/dependencytradeoff.svg)
+
+
+## Dependency management in WORCS
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+
+
+- Maintains text-based list of packages, their version,  
+  and origin (e.g., “CRAN”, “Bioconductor”, “GitHub”)
+- This list can be version-controlled with Git;
+- When a user loads the project,  
+    `renv` installs all dependencies from the list
+
+### Important because:
+
+- Essential for reproducibility
+- Good for collaboration (everybody has same versions)
+- Nice to your "future self": Your code will work in the future
+
+:::
+
+::: {.column width="30%"}
+
+<img src="https://rstudio.github.io/renv/reference/figures/logo.svg" width="100%" height="100%" />
+
+
+:::
+
+::::
+
+
+
+    
+
+<!-- With the background knowledge in mind, let's have another look at the workflow -->
+
+## Unique features in `worcs`
+
+* RStudio template
+* Automatic installation check: `check_worcs_installation()`
+* Easy GitHub integration
+    - Add URL during project creation
+    - `git_update("Commit message")`
+    - Automatically reproduce results in the cloud!
+* Manuscript and preregistration templates
+    - From `rticles`, `papaja`, and `prereg`
+    - Original templates for secondary- and longitudinal data
+* Data sharing solutions
+* Cite `@essential` and `@@nonessential`
+* Integration with `targets`
+* WORCS checklist and badge
+
+
+## Sharing data in WORCS
+
+- Reproducibility requires open data
+- Some data may be (privacy) sensitive
+    * E.g., children's data, veterans' data, patient data
+
+#### Use `open_data()`:
+
+- Original data made public
+- Default is a `.csv` (text based, human / machine readable)
+- Other save / load functions can be used
+
+#### Use `closed_data()`:
+
+- Original data saved locally;
+- Synthetic data created using `synthetic()`
+- Synthetic data made public (default: `.csv`)
+- Unique ID of original data made public (so people can audit your work)
+
+
+## Sharing data in WORCS
+
+#### Loading data `load_data()`:
+
+- **If** original data are present, load them...
+- ...**Else**, load synthetic data
+- Scripts can thus ALWAYS be reproduced
+- People can create a working script using synthetic data, and send it to you to run on original data
+- Load function recorded in `.worcs` file; default `read.csv()`
+
+
+## Reproducing WORCS Project
+
+1. Create entry point (e.g., `manuscript.Rmd`)
+2. Define recipe (e.g., `rmarkdown::render("manuscript.Rmd")`)
+3. Snapshot endpoints recipe (e.g., `manuscript.pdf`, `table1.csv`)
+
+`worcs::reproduce()` generates the endpoints from the entry point via the recipe
+
+`worcs::check_endpoints()` verifies that the results are identical
+
+
+## Continuous Integration
+
+Run `worcs::reproduce()` on GitHub via GitHub Actions
+
+![](images/action_reproduce.png)
+
+
+## `targets` Integration
+
+Targets creates a pipeline for computationally intensive workflows
+
+* Each step is only re-run if:
+    + The step changed
+    + Its inputs changed
+  
+This is perfectly compatible with `worcs`!
+
+## Using `targets`
+
+* Select "Use `targets`" when creating a WORCS project
+* Use `worcs::add_targets()`
+* Select "Target Markdown" as output format
+
+A `targets` workflow is executed by running `targets::tar_make()`
+
+* `worcs` sets the recipe to `targets::tar_make()`, so `worcs::reproduce()` runs it
+* `worcs` makes sure that the last step of the pipeline is to render an Rmarkdown to report the results
+
+
+
+## For non-R-users
+
+* WORCS-paper addresses the **conceptual** workflow
+* Covers issues/decisions you have to consider for Open Science, regardless of software
+* `worcs` is a good starting point for new R-users
+    + Setup Tutorial to help install everything
+    + Tricky issues (like project management and using Git) are ~automatic when using the WORCS template
+    + Automatic check in case you get stuck: `check_worcs_installation()`
+* Learn good habits from the start; don't reinvent the wheel
+    
+
+## Find out more:
+
+<div style="background-color:#ffffff; text-align:center; vertical-align: middle; padding:20px 47px;"> <a href="https://cjvanlissa.github.io/worcshop/">cjvanlissa.github.io/worcshop</a><br><a href="https://cjvanlissa.github.io/worcs/">cjvanlissa.github.io/worcs</a> </div>
+
+## Subgroup Discussions {.splash-slide}
+   
+## Introduction of Subgroup Discussions
+![](www/change-model-1.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/change-model-2.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/change-model-3.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/change-model-4.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/change-model-5.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/change-model-6.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/group-work1.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/group-work2.jpg)
+
+## Introduction of Subgroup Discussions
+![](www/group-work3.jpg)
+
+# Thank you
+
+
+:::: {.columns }
+::: {.column width="50%"}
+![](www/dipf-logo.png){width="40%"}\
+\
+
+**Jürgen Schneider**\
+[ju.schneider\@dipf.de](mailto:ju.schneider@dipf.de){.email}
+:::
+
+::: {.column width="50%"}
+![](www/tilburg_logo.webp){width="75%"}\
+\
+
+**Olmo van den Akker**\
+**Marjan Bakker**\
+**Caspar van Lissa **
+:::
+::::
+
+
+## References
+
+::: {#refs}
+:::
+
+## Credit
+
+Title page: [OpenClipart-Vectors](https://pixabay.com/users/openclipart-vectors-30363/) on [www.pixabay.com](https://pixabay.com)  
+  
+Icons by Font Awesome CC BY 4.0
+
+
