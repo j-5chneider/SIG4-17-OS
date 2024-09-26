@@ -5,14 +5,14 @@ title-slide-attributes:
   data-background-image: www/title-bg.jpg
   data-background-size: cover
   #data-background-opacity: "0.3"
-author: "<br /><br /><b>Jürgen Schneider</b><br />*Caspar J. Van Lissa, Marjan Bakker and Olmo van den Akker<br /><br />EARLI SIG 4/17*"
+author: "<br /><br />*Jürgen Schneider, Caspar J. Van Lissa,<br />Marjan Bakker and Olmo van den Akker<br /><br />EARLI SIG 4/17*"
 date: today # "20. Mar 2024"
 date-format: "DD MMMM YYYY"
 format: 
   revealjs:
       theme: [white] # sky default
       logo: www/dipf-logo.png
-      footer: "Slides: [link pending](#)"
+      footer: "Slides: [t1p.de/utrecht-os](https://github.com/j-5chneider/SIG4-17-OS)"
       smaller: true
       scrollable: true
       transition: fade
@@ -53,7 +53,7 @@ library(kableExtra)
    - Open and Reproducible Code<br /><br />
 2. **Subgroup Discussions (60min)**
    - One group for each OS aspect
-   - Applying a model for managing complex change"
+   - Applying a model for managing complex change
    - For each OS aspect: Where do you see the greatest need for change?
    - What specific actions can we take or initiate?<br /><br />
 3. **Bringing Ideas Together, Plenary Discussion (30min)**
@@ -685,6 +685,7 @@ A `targets` workflow is executed by running `targets::tar_make()`
 ## Subgroup Discussions {.splash-slide}
    
 ## Introduction of Subgroup Discussions
+**Managing complex change (Lippitt-Knoster model)**  
 ![](www/change-model-1.jpg)
 
 ## Introduction of Subgroup Discussions
