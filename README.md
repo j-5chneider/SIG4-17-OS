@@ -3,8 +3,8 @@
 
 Here are the **slides** for the parts on
 
-* preregistration and registered report [coming up]
-* open and FAIR data as well as open and reproducible code: ([watch slides in browser](https://raw.githack.com/j-5chneider/SIG4-17-OS/refs/heads/main/2_slides_open-data_open_code.html) or [download slides](https://github.com/j-5chneider/SIG4-17-OS/blob/main/2_slides_open-data_open_code.html) with button on the top right)
+* preregistration and registered report: [download pdf file](https://github.com/j-5chneider/SIG4-17-OS/blob/main/1_slides_preregistration.pdf)
+* open and FAIR data as well as open and reproducible code: ([watch slides in browser](https://raw.githack.com/j-5chneider/SIG4-17-OS/refs/heads/main/2_slides_open-data_open_code.html) or [download HTML slides](https://github.com/j-5chneider/SIG4-17-OS/blob/main/2_slides_open-data_open_code.html) with button on the top right)
 
 \
 
